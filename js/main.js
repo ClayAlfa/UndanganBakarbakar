@@ -1,44 +1,14 @@
 // owl carousel start
 $(document).ready(function () {
-  $(".owl-carousel").owlCarousel({
-    loop: true,
-    nav: true,
-    margin: 15,
-    autoplay: true,
-    autoplayhoverpause: true,
-    autoplaytimeout: 500,
-    responsive: {
-      0: {
-        items: 1,
-        dots: false,
-      },
-      600: {
-        items: 2,
-        dots: false,
-      },
-      1000: {
-        items: 3,
-        dots: false,
-      },
-    },
-  });
+  // Modern gallery initialization - using CSS Grid instead of Owl Carousel
+  // Owl carousel removed for modern grid layout
 });
 // owl carousel end
 
 // copy start
-const rek1 = document.getElementById("rek1");
 const salin1 = document.getElementById("salin1");
 
-salin1.onclick = () => {
-  rek1.select(); // Selects the text inside the input
-  document.execCommand("copy"); // Simply copies the selected text to clipboard
-  Swal.fire({
-    icon: "success",
-    title: "No. Rekening Berhasil di Salin",
-    showConfirmButton: false,
-    timer: 1000,
-  });
-};
+// Modern copy functionality moved to modern-effects.js
 // copy end
 
 // waktu start
@@ -73,18 +43,15 @@ const x = setInterval(function () {
 
 // modal start
 window.onload = function () {
-  document.getElementById("klikmodal").click();
+  // Show modal after loader
+  setTimeout(() => {
+    document.getElementById("klikmodal").click();
+  }, 2500);
 };
 // modal end
 
 // lagu start
-const lagu = document.getElementById("lagu");
-function playAudio() {
-  lagu.play();
-}
-function stopAudio() {
-  lagu.pause();
-}
+// Audio functions moved to modern-effects.js
 // lagu end
 
 // undngan start
@@ -101,13 +68,5 @@ function GetURLParameter(sParam) {
 var to = GetURLParameter("to");
 document.getElementById("nama").innerHTML = to ? decodeURI(to) : "-";
 
-// hover blur effect
-$(".blur").mouseenter(function () {
-  $(".blur").css("filter", "blur(5px)"); // Blurs each .blur div
-  $(this).css("filter", "blur(0px)"); // Removes blur from the currently hovered .blur div
-});
-$(".blur").mouseleave(function () {
-  $(".blur").css("filter", "blur(0px)"); // Removes blur from all when none are hovered
-});
-
+// Modern hover effects handled in CSS and modern-effects.js
 // undngan end
